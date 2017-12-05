@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../static/dist/sweetalert-master/dist/sweetalert.css">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../static/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../static/dist/css/skins/_all-skins.min.css">
+    <link rel="script" href="../static/bootstrap/js/bootstrap.js">
+    <link rel="script" href="../static/plugins/jQuery/jquery-2.2.3.min.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/woo/flexslider.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../static/plugins/iCheck/flat/blue.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="../static/plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="../static/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="../static/plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="../static/dist/css/custom/custom.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="../static/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="../static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Catamaran:100|Exo:100|Lato|Quicksand:300" rel="stylesheet">
+    <title>Title</title>
+    <style>
+    a{
+        text-decoration: none;
+        color: white;
+    }
+        /* To Dropdown navbar dropdown on hover */
+        .navbar-nav > li:hover > .dropdown-menu {
+            display: block;
+        }
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu>.dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -6px;
+            margin-left: -1px;
+            -webkit-border-radius: 0 6px 6px 6px;
+            -moz-border-radius: 0 6px 6px;
+            border-radius: 0 6px 6px 6px;
+        }
+
+        .dropdown-submenu:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu>a:after {
+            display: block;
+            content: " ";
+            float: right;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-left-color: #ccc;
+            margin-top: 5px;
+            margin-right: -10px;
+        }
+
+        .dropdown-submenu:hover>a:after {
+            border-left-color: #fff;
+        }
+
+        .dropdown-submenu.pull-left {
+            float: none;
+        }
+
+        .dropdown-submenu.pull-left>.dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+            border-radius: 6px 0 6px 6px;
+        }
+    </style>
+</head>
+<body style="background-color: white;width: 100%;margin-left: 0.0%; ">
+<br>
+<div class="row">
+    <div class="col-md-6 col-lg-offset-1"><img class="img-responsive" style="margin: 0 0 0 5%;" src="../static/dist/img/logo_larsen_toubro.jpg"></div>
+    <div class="col-md-5"><button type="button" class="btn " style="margin: 0 0 0 55%;"  onclick='$(document).ready(function() {
+    $("#group").modal();
+  });'>Group Links</button> </div>
+</div>
+<br>
+<nav class = "navbar navbar-default" style="background-color:#024d87;" role = "navigation">
+
+
+    <div>
+        <ul class = "nav navbar-nav">
+            <li class = "active"><a href = "/" style="color:#024d87;">&nbsp; Home &nbsp;</a></li>
+            <li class = "dropdown">
+                <a href = "/campusInfo" style="color: white;" class = "dropdown-toggle" data-toggle = "dropdown">
+                    Campus Info
+                    <b class = "caret"></b>
+                </a>
+
+                <ul  class = "dropdown-menu">
+                    <li><a href = "/history">History</a></li>
+                    <li><a href = "/map">Map</a></li>
+                    <li><a href = "/buildingdetails">Building Details</a></li>
+                </ul>
+
+            </li>
+
+            <li class = "dropdown">
+                <a href = "#" style="color: white;" class = "dropdown-toggle" data-toggle = "dropdown">
+                    &nbsp; Units &nbsp;
+                    <b class = "caret"></b>
+                </a>
+
+                <ul  class = "dropdown-menu">
+                    <li><a href = "/ese">ESE</a></li>
+                    <li><a href = "/pmsc">PMSC</a></li>
+                    <li><a href = "/ltvl">LTVL</a></li>
+                    <li><a href = "/sddc">SDDC</a></li>
+                    <li><a href = "/pdc">PDC</a></li>
+                    <li><a href = "/ccm">CCM</a></li>
+                </ul>
+
+            </li>
+            <li class = "dropdown">
+                <a style="color: white;" href = "hr.html" class = "dropdown-toggle" data-toggle = "dropdown">
+                    &nbsp; HR &nbsp;
+                    <b class = "caret"></b>
+                </a>
+
+                <ul class = "dropdown-menu">
+                    <li><a href = "/sports">Sports</a></li>
+
+                </ul>
+
+            </li>
+            <li>
+                <a href = "/csr" style="color: white;" >
+                    &nbsp; CSR &nbsp;
+                </a>
+
+            </li>
+            <li class = "dropdown">
+                <a href = "/sustainability"  style="color: white;"class = "dropdown-toggle" data-toggle = "dropdown">
+                    &nbsp; Sustainability &nbsp;
+                </a>
+
+            </li>
+            <li class = "dropdown">
+                <a href = "quickLinks" style="color: white;" class = "dropdown-toggle" data-toggle = "dropdown">
+                    &nbsp; Quick Links &nbsp;
+                    <b class = "caret"></b>
+                </a>
+
+                <ul class = "dropdown-menu">
+                    <li><a href = "/scape">L&T Scape</a></li>
+
+                </ul>
+
+            </li>
+            <li><a href = "/nammaKovai" style="color: white;">&nbsp; Namma Kovai &nbsp;</a></li>
+        </ul>
+    </div>
+
+</nav>
+<br>
+
+<div id="myCarousel" class="carousel slide" style="margin:-2% 0 0 0;width: 100%;" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+        <div class="item active">
+            <img src="../static/dist/img/05power.jpg" width="3000px" height="300px" alt="Chicago">
+        </div>
+
+        <div class="item">
+            <img src="../static/dist/img/02power.jpg" width="3000px" height="300px" alt="New York">
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<br>
+<div class="row bg-gray" style="height:220px;margin:-1.2% 0 0 0%;width: 100%;">
+    <div class="row">
+        <div class="col-md-12">
+    <br>
+            {% for i in li[0] %}
+            <div class="col-md-2" style="background-color: white;margin:0 0 0 2%;box-shadow:  0 2px 10px 0 rgba(0,0,0,.16);">
+            <div class="card">
+                <div class="card-block">
+                    <!--Title-->
+                    <h4 class=\"card-title\">{{ i[0] }}</h4>
+                    <!--Text-->
+                    <p class=\"card-text\">{{ i[2] }}</p>
+                    <button type="button" onclick="openBox('{{ i[0] }}','{{ i[1] }}');" class="btn btn-info btn-lg">View</button>
+                </div>
+                <!--/.Card content-->
+                <br>
+            </div>  </div>
+            {% endfor %}
+    </div>
+
+    <br>
+<br>
+    </div>
+    </div>
+    <BR>
+    <div class="row" style="background-color:#024d87;">
+        <br>
+        <div class="col-md-12">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="myCarousel_News" class="carousel slide">
+                <div class="carousel-inner">
+                   <div class="item active">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#"><img class="thumbnail" src="/img/{{ li[1][0][0] }}" alt="Slide1"></a></div>
+                            <div class="col-md-3">
+                                <h1 style="color: white;"><b>{{ li[1][0][1] }}</b></h1>
+                            <p>{{ li[1][0][2] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% for i in li[1][1:] %}
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="#"><img class="thumbnail img-responsive" src="/img/{{ i[0] }}" alt="Slide1"></a></div>
+                            <div class="col-md-3">
+                                <h1 style="color: white;"><b>{{ i[1] }}</b></h1>
+                            <p>{{ i[2] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel_News" style="background-color: #222;"  data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel_News" style="background-color: #222;"  data-slide-to="1"></li>
+                    <li data-target="#myCarousel_News" style="background-color: #222;"  data-slide-to="2"></li>
+                </ol>
+            </div><!-- End Carousel -->
+        </div>
+    </div>
+</div>
+</div>
+        </div></div>
+
+        <div class="row" >
+            <div class="col-sm-3" style="background-color:#D5D5D5;margin: 0.5% 0 -1% 0;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-offset-1" >
+                            <!-- Carousel
+                            ================================================== -->
+                            <div id="myCarousel_Birthday" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-12" style="color: #024d87;">Today's Birthday</div>
+                                                </div>
+                                                <br>
+                                              <div class="row">
+                                                <div class="col-md-12">
+                                                  <a href="#"><img class="thumbnail" src="http://placehold.it/500x300/" style="height:150px;width: 150px;border-radius: 50%;" alt="Slide1"></a></div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                <h4 style="color: #024d87;"><b>{{ li[2][0][1] }}</b></h4>
+                                                </div></div>
+
+                                            </div>
+                                    {% for i in li[2][1:] %}
+                                    <div class="item">
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-12" style="color: #024d87;">Today's Birthday</div>
+                                                </div>
+                                                <br>
+                                              <div class="row">
+                                                <div class="col-md-12">
+                                                  <a href="#"><img class="thumbnail" src="http://placehold.it/500x300/" style="height:150px;width: 150px;border-radius: 50%;" alt="Slide1"></a></div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                <h4 style="color: #024d87;"><b>{{ i[1] }}</b></h4>
+                                                </div></div>
+
+                                            </div>
+                                    {% endfor %}
+
+                                    
+                                    <!-- Indicators -->
+                                    <br>
+                                    <br>
+                                    <ol class="carousel-indicators" style="margin: 0 0 0 -55%;">
+                                        <li data-target="#myCarousel_Birthday" style="background-color: #222;"  data-slide-to="0" class="active"></li>
+                                        <li data-target="#myCarousel_Birthday" style="background-color: #222;"  data-slide-to="1"></li>
+                                        <li data-target="#myCarousel_Birthday" style="background-color: #222;"  data-slide-to="2"></li>
+                                    </ol>
+                                </div><!-- End Carousel -->
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-offset-1">
+
+                            <div class="row">
+                                <div class="col-md-8 col-lg-offset-4"><h1>Related Links</h1></div>
+                            </div>
+                            <br><br>
+                            <div class="row ">
+                               <div class="col-lg-12">
+                                <div class="col-md-4"><img src="../static/dist/img/Travel-Desk.png" width="150px" height="150px"></div>
+                                <div class="col-md-4"><img src="../static/dist/img/20160503_58DF5555BB87BCF5FADEE14F02EC7010-300x300.png" width="150px" height="150px"></div>
+                                <div class="col-md-4"><img src="../static/dist/img/social_myspace_button_blue.png" width="150px" height="150px"></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+            <br>
+<div id="myModal" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" id="modalTitle"></h4>
+        </div>
+        <div id="modalBody" class="modal-body">
+            <p>$detail</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+
+</div>
+</div>
+    <div class="row" style="background-color:#024d87; ">
+        <div class="col-md-4" style="margin:0 0 0 5%;">
+             <h3 style="color:#D3D3D3;"><b>LARSEN & TOUBRO LIMITED</b></h3>
+    <hr>
+    <ul >
+    <li > <a href="/"> Home </a></li>
+    <li><a href="/campusInfo">CampusInfo</a></li>
+    <li><a href="/units">Units</a></li>
+    <li><a href="/hr">HR</a></li>
+    <li><a href="/csr">CSR</a></li>
+    <li><a href="/sustainability">Sustainability</a></li>
+    <li><a href="/quickLinks">Quicklinks</a></li>
+    <li><a href="/nammaKovai">NammaKovai</a></li>
+        <br>
+        <br>
+        <li style="color: #D5D5D5;">FOLLOW US</li>
+    </ul>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-3     col-lg-offset-4">
+    <div class="footer3">
+    <h3 style="color:#D3D3D3;"><b>CONTACT US</b></h3>
+    <hr>
+    <p style="color: white;">
+    &nbsp;Larsen & Toubro Limited<br>
+        &nbsp;Near L and T Bypass Road,<br>
+        &nbsp;Malumichampatti,<br>
+        &nbsp;Coimbatore,<br>
+        &nbsp;TamilNadu-641021<br>
+        &nbsp;Landline: 0431-2222222<br>
+    <br>
+        &nbsp;Tel: +91 22 2231446<br>
+        &nbsp;Fax: +91 22 2231446
+    <br>
+    <br>
+    For any information or help Email us at:<br>
+    help@latsontubro.com
+    </p>
+    </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+    <center > © 2017 LARSEN & TOUBRO LIMITED. All rights reserved. </center>
+    </div></div>
+
+<div id="group" class="modal fade" role="dialog">
+    <div class="modal-dialog ">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Our Group Links</h4>
+            </div>
+            <div class="modal-body">
+                <p><table><tr> <ul style=" top:20px;color: #222; left: 10px;">
+
+                            <li> <a href="" style="color: #222;">Corporate</a></li>
+                            <li> <a href="" style="color: #222;">Electrical & Automation</a></li>
+                            <li> <a href="" style="color: #222;">EWAC Alloys</a></li>
+                            <li> <a href="" style="color: #222;">Heavy Engineering</a></li>
+                            <li> <a href="" style="color: #222;">L&T Hydrocarbon Engineering</a></li>
+                            <li> <a href="" style="color: #222;">L&T Infotech</a></li>
+                            <li> <a href="" style="color: #222;">L&T Cassidian Limited</a></li>
+                            <li> <a href="" style="color: #222;">L&T Construction</a></li>
+                            <li> <a href="" style="color: #222;">L&T Construction & Mining Machinery</a></li>
+                            <li> <a href="" style="color: #222;">L&T Finance Limited</a></li>
+                            <li> <a href="" style="color: #222;">L&T Hydraulics</a></li>
+                            <li> <a href="" style="color: #222;">L&T Infrastructure Development Projects Limited</a></li>
+                            <li> <a href="" style="color: #222;">L&T Infrastructure Finance Company Limited</a></li>
+                            <li> <a href="" style="color: #222;">L&T Institute of Project Management</a></li>
+
+                        </ul>
+                        <ul style=" right: 20px; color: #222;top: 20px; background-color: transparent" >
+
+                            <li> <a href="" style="color: #222;">L&T Technology Services</a></li>
+                            <li> <a href="" style="color: #222;" >L&T Kuwait Construction</a></li>
+                            <li> <a href="" style="color: #222;">L&T Metro Rail (Hyderabad) Limited</a></li>
+                            <li> <a href="" style="color: #222;">L&T-MHPS Boilers Private Limited</a></li>
+                            <li> <a href="" style="color: #222;">L&T-MHPS Turbine Generators</a></li>
+                            <li> <a href="" style="color: #222;">L&T Mutual Funds</a></li>
+                            <li> <a href="" style="color: #222;">L&T-Sargent & Lundy Limited</a></li>
+                            <li> <a href="" style="color: #222;">L&T Special Steels and Heavy Forgings</a></li>
+                            <li> <a href="" style="color: #222;">L&T Valves Limited</a></li>
+                            <li> <a href="" style="color: #222;">Nabha Power Limited</a></li>
+                            <li> <a href="" style="color: #222;">Power</a></li>
+                            <li> <a href="" style="color: #222;">Power Development Limited</a></li>
+                            <li> <a href="" style="color: #222;">Rubber Processing Machinery</a></li>
+                            <li> <a href="" style="color: #222;">Shipbuilding</a></li>
+                            <ul></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+    function openBox(title,body) {
+        //document.getElementsById("#modalTile").value=title;
+        $('#modalTitle').text(title);
+        $('#modalBody').text(body);
+        $('#myModal').modal('toggle');
+    }
+</script>
+<script>
+    $('#myCarousel_News').carousel({
+        interval:   4000
+    });
+    $(window).load(function() {
+        // The slider being synced must be initialized first
+        $('#carousel').flexslider({
+            animation: "slide",
+            controlNav: false,
+            animationLoop: false,
+            slideshow: false,
+            itemWidth: 210,
+            itemMargin: 5,
+            asNavFor: '#slider'
+        });
+    $(document).ready(function() {
+        $('.navbar a.dropdown-toggle').on('click', function(e) {
+            var $el = $(this);
+            var $parent = $(this).offsetParent(".dropdown-menu");
+            $(this).parent("li").toggleClass('open');
+
+            if(!$parent.parent().hasClass('nav')) {
+                $el.next().css({"top": $el[0].offsetTop, "left": $parent.outerWidth() - 4});
+            }
+
+            $('.nav li.open').not($(this).parents("li")).removeClass("open");
+
+            return false;
+        });
+    });
+        $(window).load(function() {
+            // The slider being synced must be initialized first
+            $('#carousel').flexslider({
+                animation: "slide",
+                controlNav: false,
+                animationLoop: false,
+                slideshow: false,
+                itemWidth: 210,
+                itemMargin: 5,
+                asNavFor: '#slider'
+            });
+
+            $('#slider').flexslider({
+                animation: "slide",
+                controlNav: false,
+                animationLoop: false,
+                slideshow: false,
+                sync: "#carousel"
+            });
+        });
+
+
+
+</script>
+<script>
+
+    document.getElementById("0 a").onclick =function() {
+        $("#0").modal();
+    });
+    document.getElementById("1 a").onclick =function() {
+        $("#1").modal();
+    });
+    document.getElementById("2 a").onclick =function() {
+        $("#2").modal();
+    });
+    document.getElementById("3 a").onclick =function() {
+        $("#3").modal();
+    });
+    document.getElementById("4 a").onclick =function() {
+        $("#4").modal();
+    });
+
+</script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="../static/plugins/morris/morris.min.js"></script>
+<script src="../static/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="../static/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="../static/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="../static/plugins/knob/jquery.knob.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="../static/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="../static/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="../static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="../static/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../static/plugins/fastclick/fastclick.js"></script>
+<script src="../static/dist/js/app.min.js"></script>
+<script src="../static/dist/js/pages/dashboard.js"></script>
+<script src="../static/dist/js/demo.js"></script>
+</html>
