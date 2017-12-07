@@ -40,7 +40,7 @@ def index():
     all_news = dictfetchall(cursor)
 
 
-    cursor.execute("SELECT name,iloc from employee")
+    cursor.execute("SELECT iloc,name from employee where dob = '2000-11-11'")
     all_employee = dictfetchall(cursor)
     cursor.close()
     mariadb_connection.close()
@@ -61,15 +61,13 @@ def index():
 
     for i in all_employee:
         temp = []
-        temp.append(str('iloc'))
-        temp.append(str('name'))
+        temp.append(str(i['iloc']))
+        temp.append(str(i['name']))
         emp_res.append(temp)
 
     res.append(ann_res)
+    res.append(news_res)
     res.append(emp_res)
-    res.append(emp_res)
-
-    #return str(res)
 
     return render_template('index.html',li=res)
 
@@ -104,6 +102,13 @@ def sddc():
 @app.route('/nammaKovai',methods=['GET'])
 def nammakovai():
     return render_template('sddc.html')
+
+@app.route('/post_announcement',methods = ['POST','GET'])
+def post_announcement():
+    if request.method == 'POST':
+        result = request.form
+        return str(result)
+
 
 
 if __name__ == '__main__':
