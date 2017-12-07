@@ -105,16 +105,9 @@
         <ul class = "nav navbar-nav">
             <li class = "active"><a href = "/" style="color:#024d87;">&nbsp; Home &nbsp;</a></li>
             <li class = "dropdown">
-                <a href = "/campusInfo" style="color: white;" class = "dropdown-toggle" data-toggle = "dropdown">
+                <a href = "/campusInfo" style="color: white;">
                     Campus Info
-                    <b class = "caret"></b>
                 </a>
-
-                <ul  class = "dropdown-menu">
-                    <li><a href = "/history">History</a></li>
-                    <li><a href = "/map">Map</a></li>
-                    <li><a href = "/buildingdetails">Building Details</a></li>
-                </ul>
 
             </li>
 
@@ -135,7 +128,7 @@
 
             </li>
             <li class = "dropdown">
-                <a style="color: white;" href = "hr.html" class = "dropdown-toggle" data-toggle = "dropdown">
+                <a style="color: white;" href = "/hr" class = "dropdown-toggle" data-toggle = "dropdown">
                     &nbsp; HR &nbsp;
                     <b class = "caret"></b>
                 </a>
@@ -159,7 +152,9 @@
 
             </li>
             <li class = "dropdown">
-                <a href = "quickLinks" style="color: white;" class = "dropdown-toggle" data-toggle = "dropdown">
+                <a  onclick='$(document).ready(function() {
+    $("#group").modal();
+  });' style="color:white;">
                     &nbsp; Quick Links &nbsp;
                     <b class = "caret"></b>
                 </a>
@@ -170,11 +165,12 @@
                 </ul>
 
             </li>
-            <li><a href = "nammaKovai" style="color: white;">&nbsp; Namma Kovai &nbsp;</a></li>
+            <li><a href = "/nammaKovai" style="color: white;">&nbsp; Namma Kovai &nbsp;</a></li>
         </ul>
     </div>
 
 </nav>
+<br>
 
 <div id="myCarousel" class="carousel slide" style="margin:-2% 0 0 0;width: 100%;" data-ride="carousel">
     <!-- Indicators -->
@@ -187,7 +183,7 @@
     <div class="carousel-inner">
 
         <div class="item active">
-            <img src="ltvl2.png" width="3000px" height="300px" alt="Chicago">
+            <img src="../static/dist/img/ltvl2.png" width="3000px" height="300px" alt="l&t">
         </div>
     </div>
 
@@ -298,18 +294,20 @@
         <h3 style="color:#D3D3D3;"><b>LARSEN & TOUBRO LIMITED</b></h3>
         <hr>
         <ul >
-            <li > <a href="/"> Home </a></li>
-            <li><a href="/campusInfo">CampusInfo</a></li>
-            <li><a href="/units">Units</a></li>
-            <li><a href="/hr">HR</a></li>
-            <li><a href="/csr">CSR</a></li>
-            <li><a href="/sustainability">Sustainability</a></li>
-            <li><a href="/quickLinks">Quicklinks</a></li>
-            <li><a href="/nammaKovai">NammaKovai</a></li>
-            <br>
-            <br>
-            <li style="color: #D5D5D5;">FOLLOW US</li>
-        </ul>
+    <li > <a href="/"> Home </a></li>
+    <li><a href="/campusInfo">CampusInfo</a></li>
+    <li><a href="/pmsc">PMSC</a></li>
+    <li><a href="/ese">ESE</a></li>
+    <li><a href="/gen">GEN</a></li>
+    <li><a href="/pdc">PDC</a></li>
+    <li><a onclick='$(document).ready(function() {
+    $("#group").modal();
+  });'>Quicklinks</a></li>
+    <li><a href="/nammaKovai">NammaKovai</a></li>
+        <br>
+        <br>
+        <li style="color: #D5D5D5;">FOLLOW US</li>
+    </ul>
     </div>
     <div class="col-md-4"></div>
     <div class="col-md-3     col-lg-offset-4">

@@ -103,8 +103,13 @@
 
     <div>
         <ul class = "nav navbar-nav">
-            <li class = "active"><a href = "#" style="color:#024d87;">&nbsp; Home &nbsp;</a></li>
-            <li><a href = "#" style="color: white;">&nbsp; Campus Info &nbsp;</a></li>
+            <li class = "active"><a href = "/" style="color:#024d87;">&nbsp; Home &nbsp;</a></li>
+            <li class = "dropdown">
+                <a href = "/campusInfo" style="color: white;">
+                    Campus Info
+                </a>
+
+            </li>
 
             <li class = "dropdown">
                 <a href = "#" style="color: white;" class = "dropdown-toggle" data-toggle = "dropdown">
@@ -113,92 +118,54 @@
                 </a>
 
                 <ul  class = "dropdown-menu">
-                    <li><a href = "ese.html">ESE</a></li>
-                    <li><a href = "pmsc.html">PMSC</a></li>
-                    <li><a href = "ltvl.html">LTVL</a></li>
-                    <li><a href = "sddc.html">SDDC</a></li>
-                    <li><a href = "pdc.html">PDC</a></li>
-                    <li><a href = "ccm.html">CCM</a></li>
+                    <li><a href = "/ese">ESE</a></li>
+                    <li><a href = "/pmsc">PMSC</a></li>
+                    <li><a href = "/ltvl">LTVL</a></li>
+                    <li><a href = "/sddc">SDDC</a></li>
+                    <li><a href = "/pdc">PDC</a></li>
+                    <li><a href = "/ccm">CCM</a></li>
                 </ul>
 
             </li>
             <li class = "dropdown">
-                <a style="color: white;" href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+                <a style="color: white;" href = "/hr" class = "dropdown-toggle" data-toggle = "dropdown">
                     &nbsp; HR &nbsp;
                     <b class = "caret"></b>
                 </a>
 
                 <ul class = "dropdown-menu">
-                    <li><a href = "#">jmeter</a></li>
-                    <li><a href = "#">EJB</a></li>
-                    <li><a href = "#">Jasper Report</a></li>
+                    <li><a href = "/sports">Sports</a></li>
 
-                    <li class = "divider"></li>
-                    <li><a href = "#">Separated link</a></li>
-
-                    <li class = "divider"></li>
-                    <li><a href = "#">One more separated link</a></li>
                 </ul>
 
             </li>
-            <li class = "dropdown">
-                <a href = "#" style="color: white;" class = "dropdown-toggle" data-toggle = "dropdown">
+            <li>
+                <a href = "/csr" style="color: white;" >
                     &nbsp; CSR &nbsp;
-                    <b class = "caret"></b>
                 </a>
-
-                <ul class = "dropdown-menu">
-                    <li><a href = "#">jmeter</a></li>
-                    <li><a href = "#">EJB</a></li>
-                    <li><a href = "#">Jasper Report</a></li>
-
-                    <li class = "divider"></li>
-                    <li><a href = "#">Separated link</a></li>
-
-                    <li class = "divider"></li>
-                    <li><a href = "#">One more separated link</a></li>
-                </ul>
 
             </li>
             <li class = "dropdown">
-                <a href = "#"  style="color: white;"class = "dropdown-toggle" data-toggle = "dropdown">
+                <a href = "/sustainability"  style="color: white;"class = "dropdown-toggle" data-toggle = "dropdown">
                     &nbsp; Sustainability &nbsp;
-                    <b class = "caret"></b>
                 </a>
-
-                <ul class = "dropdown-menu">
-                    <li><a href = "#">jmeter</a></li>
-                    <li><a href = "#">EJB</a></li>
-                    <li><a href = "#">Jasper Report</a></li>
-
-                    <li class = "divider"></li>
-                    <li><a href = "#">Separated link</a></li>
-
-                    <li class = "divider"></li>
-                    <li><a href = "#">One more separated link</a></li>
-                </ul>
 
             </li>
             <li class = "dropdown">
-                <a href = "#" style="color: white;" class = "dropdown-toggle" data-toggle = "dropdown">
+                <a  onclick='$(document).ready(function() {
+    $("#group").modal();
+  });' style="color:white;">
                     &nbsp; Quick Links &nbsp;
                     <b class = "caret"></b>
                 </a>
 
                 <ul class = "dropdown-menu">
-                    <li><a href = "#">jmeter</a></li>
-                    <li><a href = "#">EJB</a></li>
-                    <li><a href = "#">Jasper Report</a></li>
+                    <li><a href = "/scape">L&T Scape</a></li>
 
-                    <li class = "divider"></li>
-                    <li><a href = "#">Separated link</a></li>
-
-                    <li class = "divider"></li>
-                    <li><a href = "#">One more separated link</a></li>
                 </ul>
 
             </li>
-            <li><a href = "#" style="color: white;">&nbsp; Namma Kovai &nbsp;</a></li>
+            <li><a href = "/nammaKovai" style="color: white;">&nbsp; Namma Kovai &nbsp;</a></li>
         </ul>
     </div>
 
@@ -215,7 +182,7 @@
     <div class="carousel-inner">
 
         <div class="item active">
-            <img src="Picture1.png" width="3000px" height="300px" alt="Chicago">
+            <img src="../static/dist/img/Picture1.png" width="3000px" height="300px" alt="Chicago">
         </div>
 
     </div>
@@ -251,18 +218,20 @@
         <h3 style="color:#D3D3D3;"><b>LARSEN & TOUBRO LIMITED</b></h3>
         <hr>
         <ul >
-            <li > <a href="index.html"> Home </a></li>
-            <li><a href="index.html">CampusInfo</a></li>
-            <li><a href="index.html">Units</a></li>
-            <li><a href="index.html">HR</a></li>
-            <li><a href="index.html">CSR</a></li>
-            <li><a href="index.html">Sustainability</a></li>
-            <li><a href="index.html">Quicklinks</a></li>
-            <li><a href="index.html">NammaKovai</a></li>
-            <br>
-            <br>
-            <li style="color: #D5D5D5;">FOLLOW US</li>
-        </ul>
+    <li > <a href="/"> Home </a></li>
+    <li><a href="/campusInfo">CampusInfo</a></li>
+    <li><a href="/pmsc">PMSC</a></li>
+    <li><a href="/ese">ESE</a></li>
+    <li><a href="/gen">GEN</a></li>
+    <li><a href="/pdc">PDC</a></li>
+    <li><a onclick='$(document).ready(function() {
+    $("#group").modal();
+  });'>Quicklinks</a></li>
+    <li><a href="/nammaKovai">NammaKovai</a></li>
+        <br>
+        <br>
+        <li style="color: #D5D5D5;">FOLLOW US</li>
+    </ul>
     </div>
     <div class="col-md-4"></div>
     <div class="col-md-3     col-lg-offset-4">
