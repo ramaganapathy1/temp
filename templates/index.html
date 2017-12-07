@@ -126,7 +126,6 @@
                     <li><a href = "/ltvl">LTVL</a></li>
                     <li><a href = "/sddc">SDDC</a></li>
                     <li><a href = "/pdc">PDC</a></li>
-                    <li><a href = "/ccm">CCM</a></li>
                 </ul>
 
             </li>
@@ -159,13 +158,8 @@
     $("#group").modal();
   });' style="color:white;">
                     &nbsp; Quick Links &nbsp;
-                    <b class = "caret"></b>
+
                 </a>
-
-                <ul class = "dropdown-menu">
-                    <li><a href = "/scape">L&T Scape</a></li>
-
-                </ul>
 
             </li>
             <li><a href = "/nammaKovai" style="color: white;">&nbsp; Namma Kovai &nbsp;</a></li>
@@ -174,7 +168,8 @@
 
 </nav>
 <br>
-
+<div class="row">
+    <div class="col-lg-12">
 <div id="myCarousel" class="carousel slide" style="margin:-2% 0 0 0;width: 100%;" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -204,8 +199,10 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+</div>
+</div>
 <br>
-<div class="row bg-gray" style="height:220px;margin:-1.2% 0 0 0%;width: 100%;">
+<div class="row bg-gray" style="margin:-1.2% 0 0 0%;width: 100%;">
     <div class="row">
         <div class="col-md-12">
     <br>
@@ -224,24 +221,22 @@
             </div>  </div>
             {% endfor %}
     </div>
-
-    <br>
+    </div>
+<br><br>
+</div>
 <br>
-    </div>
-    </div>
-    <BR>
     <div class="row" style="background-color:#024d87;">
         <br>
         <div class="col-md-12">
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div id="myCarousel_News" class="carousel slide">
+            <div id="myCarousel_News" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                    <div class="item active">
                         <div class="row">
                             <div class="col-md-7">
-                                <a href="#"><img class="thumbnail" src="/img/{{ li[1][0][0] }}" alt="Slide1"></a></div>
+                                <a href="#"><img class="thumbnail" src="http://placehold.it/500x300/" alt="Slide1"></a></div>
                             <div class="col-md-3">
                                 <h1 style="color: white;"><b>{{ li[1][0][1] }}</b></h1>
                             <p>{{ li[1][0][2] }}</p>
@@ -252,7 +247,7 @@
                     <div class="item">
                         <div class="row">
                             <div class="col-md-7">
-                                <a href="#"><img class="thumbnail img-responsive" src="/img/{{ i[0] }}" alt="Slide1"></a></div>
+                                <a href="#"><img class="thumbnail img-responsive" src="http://placehold.it/500x300/" alt="Slide1"></a></div>
                             <div class="col-md-3">
                                 <h1 style="color: white;"><b>{{ i[1] }}</b></h1>
                             <p>{{ i[2] }}</p>
@@ -260,6 +255,7 @@
                         </div>
                     </div>
                     {% endfor %}
+                <br>
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel_News" style="background-color: #222;"  data-slide-to="0" class="active"></li>
@@ -274,86 +270,79 @@
         </div></div>
 
         <div class="row" >
-            <div class="col-sm-3" style="background-color:#D5D5D5;margin: 0.5% 0 -1% 0;">
+            <div class="col-sm-3" style="margin: 0.5% 0 -1% 0%;">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-offset-1" >
-                            <!-- Carousel
-                            ================================================== -->
-                            <div id="myCarousel_Birthday" class="carousel slide">
+                    <div class="row ">
+                        <div class="col-md-3  bg-gray" >
+                            <div id="myCarousel_Birthday" class="carousel slide" >
                                 <div class="carousel-inner">
                                     <div class="item active">
 
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                <br>
-                                                <div class="row">
-                                                    <div class="col-md-12" style="color: #024d87;">Today's Birthday</div>
-                                                </div>
-                                                <br>
+                                            <div class="col-md-10 col-sm-offset-3">
                                               <div class="row">
-                                                <div class="col-md-12">
-                                                  <a href="#"><img class="thumbnail" src="http://placehold.it/500x300/" style="height:150px;width: 150px;border-radius: 50%;" alt="Slide1"></a></div>
+                                                <div class="col-md-12 bg-gray"><br>
+
+                                                    Today's Birthday<br>
+                                                  <a href="#">
+                                                      <img class="img-circle" src="http://placehold.it/100x100/"
+                                                                   style="" alt="Slide1"></a>
+                                                            </div>
                                             </div>
                                             </div>
                                         </div>
                                             <div class="row">
-                                                <div class="col-md-12">
+                                                <div class="col-md-12 col-lg-offset-3">
                                                 <h4 style="color: #024d87;"><b>{{ li[2][0][1] }}</b></h4>
                                                 </div></div>
 
-                                            </div>
+                                    </div>
                                     {% for i in li[2][1:] %}
                                     <div class="item">
 
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                <br>
-                                                <div class="row">
-                                                    <div class="col-md-12" style="color: #024d87;">Today's Birthday</div>
-                                                </div>
-                                                <br>
+                                            <div class="col-md-10 col-sm-offset-3">
                                               <div class="row">
-                                                <div class="col-md-12">
-                                                  <a href="#"><img class="thumbnail" src="http://placehold.it/500x300/" style="height:150px;width: 150px;border-radius: 50%;" alt="Slide1"></a></div>
+                                                <div class="col-md-12 bg-gray"><br>
+
+                                                    Today's Birthday<br>
+                                                  <a href="#">
+                                                      <img class="img-circle" src="http://placehold.it/100x100/"
+                                                                   style="" alt="Slide1"></a>
+                                                            </div>
                                             </div>
                                             </div>
                                         </div>
                                             <div class="row">
-                                                <div class="col-md-12">
-                                                <h4 style="color: #024d87;"><b>{{ i[1] }}</b></h4>
+                                                <div class="col-md-12 col-lg-offset-3">
+                                                <h4 style="color: #024d87;"><b>{{ li[2][0][1] }}</b></h4>
                                                 </div></div>
 
-                                            </div>
+                                    </div>
                                     {% endfor %}
 
                                     
                                     <!-- Indicators -->
                                     <br>
                                     <br>
-                                    <ol class="carousel-indicators" style="margin: 0 0 0 -55%;">
+                                    <ol class="carousel-indicators" style="margin: 0 0 0 -35%;">
                                         <li data-target="#myCarousel_Birthday" style="background-color: #222;"  data-slide-to="0" class="active"></li>
                                         <li data-target="#myCarousel_Birthday" style="background-color: #222;"  data-slide-to="1"></li>
                                         <li data-target="#myCarousel_Birthday" style="background-color: #222;"  data-slide-to="2"></li>
                                     </ol>
                                 </div><!-- End Carousel -->
                             </div>
-                        </div>
-                        <div class="col-md-5 col-sm-offset-1">
+                        </div></div></div></div>
+                        <br><br><br>
+                        <div class="col-md-8 col-sm-offset-0">
 
                             <div class="row">
-                                <div class="col-md-8 col-lg-offset-4"><h1>Related Links</h1></div>
-                            </div>
-                            <br><br>
-                            <div class="row ">
-                               <div class="col-lg-12">
-                                <div class="col-md-4"><img src="../static/dist/img/Travel-Desk.png" width="150px" height="150px"></div>
-                                <div class="col-md-4"><img src="../static/dist/img/20160503_58DF5555BB87BCF5FADEE14F02EC7010-300x300.png" width="150px" height="150px"></div>
-                                <div class="col-md-4"><img src="../static/dist/img/social_myspace_button_blue.png" width="150px" height="150px"></div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
+                                <div class="col-md-3"><h1 style="text-align: left;margin-left: 5%;">Related Links</h1></div>
+                                <div class="col-md-3"><img src="../static/dist/img/Travel-Desk.png" width="150px" height="150px" style="margin-left: 5%;" /></div>
+                                <div class="col-md-3"><img src="../static/dist/img/20160503_58DF5555BB87BCF5FADEE14F02EC7010-300x300.png" style="margin-left: 5%;" width="150px" height="150px" /></div>
+                                <div class="col-md-3"><img src="../static/dist/img/social_myspace_button_blue.png" style="margin-left: 5%;" width="150px" height="150px" /></div>
+
+
                 </div>
             </div>
     </div>
@@ -388,6 +377,8 @@
     <li><a href="/ese">ESE</a></li>
     <li><a href="/gen">GEN</a></li>
     <li><a href="/pdc">PDC</a></li>
+    <li><a href="/sddc">SDDC</a></li>
+    <li><a href="/ltvl">LTVL</a></li>
     <li><a onclick='$(document).ready(function() {
     $("#group").modal();
   });'>Quicklinks</a></li>
