@@ -2,6 +2,12 @@ from flask import Flask, redirect, url_for, request,render_template
 app = Flask(__name__)
 import mysql.connector as mariadb
 import datetime
+from werkzeug import secure_filename
+import os
+
+
+NEWS_UPLOAD_FOLDER = '/root/temp/images/news'
+EMPLOYEE_UPLOAD_FOLDER = '/root/temp/images/employee'
 
 # UTILITY FUNCTIONS
 def decode(var):
@@ -24,6 +30,7 @@ def dictfetchall(cursor):
 
 @app.route('/')
 def index():
+
     #res=[[['Title 1','Description 1','date'],['Title2','Description 2','date'],['Title3','Description 3','date'],['Title 4','Description 4','date']],[['image1','News headline','news body'],['image2','News Headline 2','News body'],['image2','News Headline 2','News body']],[['person1Image','Name1'],['person2Image','Name2'],['person3Image','Name3']]]
     ann_res = []
     news_res = []
@@ -103,13 +110,62 @@ def sddc():
 def nammakovai():
     return render_template('sddc.html')
 
-@app.route('/post_announcement',methods = ['POST','GET'])
+@app.route('/admin',methods=['GET'])
+def admin():
+    return render_template('admin.html')
+
+@app.route('/post_announcement',methods = ['POST'])
 def post_announcement():
     if request.method == 'POST':
-        result = request.form
-        return str(result)
+        sub = request.form['a_subject']
+        announcement = request.form['a_info']
+        mariadb_connection = mariadb.connect(host="128.199.81.127",user='sree', password='asdf1234asdf', database='landt')
+        cursor = mariadb_connection.cursor(prepared = True)
+        #print result['announcement']
+        #print result['subject']
+        cursor.execute("INSERT INTO announcements(subject,announcement,date) values (?,?,now())",(sub,announcement));
+        cursor.close()
+        mariadb_connection.commit()
+        mariadb_connection.close()
+        return 'Insertion Successful'
+
+@app.route('/post_news',methods = ['POST'])
+def post_news():
+    if request.method == 'POST':
+        sub = request.form['newsheading']
+        news = request.form['contentNews']
+        f = request.files['fileNews']
+        f_name = secure_filename(str(sub[0:5]) + str(news[0:5]) + str(sub[0:3]))
+        f.save(os.path.join(app.config['NEWS_UPLOAD_FOLDER'], f_name))
+        mariadb_connection = mariadb.connect(host="128.199.81.127",user='sree', password='asdf1234asdf', database='landt')
+        cursor = mariadb_connection.cursor(prepared = True)
+        cursor.execute("INSERT INTO news(subject,content,iloc) values (?,?,?)",(sub,news,f_name));
+        cursor.close()
+        mariadb_connection.commit()
+        mariadb_connection.close()
+        return 'Insertion Successful'
+
+@app.route('/post_employee',methods = ['POST'])
+def post_employee():
+    if request.method == 'POST':
+        name = request.form['name']
+        dob = request.form['dob']
+        dept = request.form['dept']
+        gender = request.form['gender']
+        f = request.files['empimage']
+        f_name = secure_filename(str(name[0:3]) + str(dept[0:2]) + str(dob[0:3]))
+        f.save(os.path.join(app.config['EMPLOYEE_UPLOAD_FOLDER'], f_name))
+        mariadb_connection = mariadb.connect(host="128.199.81.127",user='sree', password='asdf1234asdf', database='landt')
+        cursor = mariadb_connection.cursor(prepared = True)
+        cursor.execute("INSERT INTO employee(name,dob,department,gender,iloc) values (?,?,?,?,?)",(name,dob,dept,gender,f_name));
+        cursor.close()
+        mariadb_connection.commit()
+        mariadb_connection.close()
+        return 'Insertion Successful'
 
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.config['NEWS_UPLOAD_FOLDER'] = NEWS_UPLOAD_FOLDER
+    app.config['EMPLOYEE_UPLOAD_FOLDER'] = EMPLOYEE_UPLOAD_FOLDER
+    app.run(host = "0.0.0.0",debug = True)
